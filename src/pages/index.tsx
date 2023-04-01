@@ -19,10 +19,12 @@ import TextUpdaterNode from '../../Components/customNode';
 //   { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
 //   { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
 // ];
-// const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
+
+const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
 
 const initialNodes = [
-  { id: 'node-1', type: 'textUpdater', position: { x: 0, y: 0 }, data: { value: 123 } },
+  { id: '1', type: 'textUpdater', position: { x: 0, y: 0 }, data: { value: 'blue.100' } },
+  { id: '2', type: 'textUpdater', position: { x: 500, y: 500 }, data: { value: 'green.100' } },
 ];
 
 const nodeTypes = { textUpdater: TextUpdaterNode };
@@ -30,7 +32,7 @@ const nodeTypes = { textUpdater: TextUpdaterNode };
 export default function Home() {
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   // console.log('rendering')
 
   // const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
