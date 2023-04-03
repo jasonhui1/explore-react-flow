@@ -12,7 +12,8 @@ import ReactFlow, {
 } from 'reactflow';
 
 import 'reactflow/dist/style.css';
-import TextUpdaterNode from '../../Components/customNode';
+import TextUpdaterNode from '../../components/customNode';
+import TextAnimationNode from '../../components/TextAnimationNode';
 
 
 // const initialNodes = [
@@ -23,11 +24,12 @@ import TextUpdaterNode from '../../Components/customNode';
 const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
 
 const initialNodes = [
-  { id: '1', type: 'textUpdater', position: { x: 0, y: 0 }, data: { value: 'blue.100' } },
-  { id: '2', type: 'textUpdater', position: { x: 500, y: 500 }, data: { value: 'green.100' } },
+  // { id: '1', type: 'textUpdater', position: { x: 0, y: 0 }, data: { value: 'blue.100' } },
+  // { id: '2', type: 'textUpdater', position: { x: 500, y: 500 }, data: { value: 'green.100' } },
+  { id: '3', type: 'textAnimationNode', position: { x: 0, y: 0 }, data: { value: 'green.100' } },
 ];
 
-const nodeTypes = { textUpdater: TextUpdaterNode };
+const nodeTypes = { textUpdater: TextUpdaterNode, textAnimationNode: TextAnimationNode };
 
 export default function Home() {
 
@@ -58,9 +60,10 @@ export default function Home() {
     (params: Edge | Connection) => setEdges((els) => addEdge(params, els)),
     [setEdges]
   );
-  
+
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
+      <h1 className=' text-red-300'>HI</h1>
       <ReactFlow
         nodes={nodes}
         edges={edges}
