@@ -20,8 +20,7 @@ export default function TextAnimationNode({ data }: any) {
                     <Text as='span' key={index}
                         display='inline-block' m='0vmin 0.3vmin'
                         transform='translateY(40%)' opacity='0' transition='none'
-                        _groupHover={{ transform: 'translateY(0%)', opacity: '1', transition: '200ms' }}
-                        style={{ 'transitionDelay': `${index * 100}ms` }}
+                        _groupHover={{ transform: 'translateY(0%)', opacity: '1', transition: '200ms', transitionDelay: `${index * 100}ms` }}
                     >
                         {word}
                     </Text>
