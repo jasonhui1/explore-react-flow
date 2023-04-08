@@ -4,8 +4,8 @@ import {
 import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 import { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import NoteWrapper from '../NoteWrapper';
-import NodeWrapper from '../NodeWrapper';
+import NoteWrapper from '../../Wrapper/NoteWrapper';
+import NodeWrapper from '../../Wrapper/NodeWrapper';
 
 
 export default function ChakraCircularProgress({ data }: any) {

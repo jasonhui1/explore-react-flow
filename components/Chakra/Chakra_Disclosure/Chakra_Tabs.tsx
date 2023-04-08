@@ -4,7 +4,7 @@ import {
 import { Tabs, TabList, TabPanels, Tab, TabPanel, useColorModeValue, useMultiStyleConfig, useTab } from '@chakra-ui/react'
 import { useState, forwardRef, } from 'react';
 import { Handle, Position } from 'reactflow';
-import NoteWrapper from './NoteWrapper';
+import NoteWrapper from '../../Wrapper/NoteWrapper';
 
 
 const tabData = [

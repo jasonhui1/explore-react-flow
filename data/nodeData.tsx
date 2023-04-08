@@ -1,16 +1,16 @@
-import TextUpdaterNode from '../components/customNode';
-import TextAnimationNode from '../components/TextAnimationNode';
-import ChakraAccordion from '../components/Chakra_Accordion';
-import { ChakraTab, ChakraCustomTab, ChakraDataTab } from '../components/Chakra_Tabs';
+import TextUpdaterNode from '../components/React-Flow/customNode';
+import TextAnimationNode from '../components/Animation/TextAnimationNode';
+import ChakraAccordion from '../components/Chakra/Chakra_Disclosure/Chakra_Accordion';
+import { ChakraTab, ChakraCustomTab, ChakraDataTab } from '../components/Chakra/Chakra_Disclosure/Chakra_Tabs';
 import {
     Node,
     Edge,
 } from 'reactflow';
-import ChakraAlert from '../components/Chakra_Feedback/Chakra_Alert';
-import ChakraCircularProgress from '../components/Chakra_Feedback/Chakra_CircularProgress';
-import ChakraProgress from '../components/Chakra_Feedback/Chakra_Progress';
-import ChakraSkeleton from '../components/Chakra_Feedback/Chakra_Skeleton';
-import ChakraToast from '../components/Chakra_Feedback/Chakra_Toast';
+import ChakraAlert from '../components/Chakra/Chakra_Feedback/Chakra_Alert';
+import ChakraCircularProgress from '../components/Chakra/Chakra_Feedback/Chakra_CircularProgress';
+import ChakraProgress from '../components/Chakra/Chakra_Feedback/Chakra_Progress';
+import ChakraSkeleton from '../components/Chakra/Chakra_Feedback/Chakra_Skeleton';
+import ChakraToast from '../components/Chakra/Chakra_Feedback/Chakra_Toast';
 
 
 export const initialEdges = [

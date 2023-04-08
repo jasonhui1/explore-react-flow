@@ -2,8 +2,8 @@ import {
     Box, Text, Heading, ListItem, UnorderedList, Button, Stack, Flex, Divider, Center
 } from '@chakra-ui/react';
 import { useToast } from '@chakra-ui/react'
-import NoteWrapper from '../NoteWrapper';
-import NodeWrapper from '../NodeWrapper';
+import NoteWrapper from '../../Wrapper/NoteWrapper';
+import NodeWrapper from '../../Wrapper/NodeWrapper';
 
 
 export default function ChakraToast({ data }: any) {

@@ -4,8 +4,8 @@ import {
 import { Progress } from '@chakra-ui/react'
 import { useState } from 'react';
 import { Handle, Position } from 'reactflow';
-import NoteWrapper from '../NoteWrapper';
-import NodeWrapper from '../NodeWrapper';
+import NoteWrapper from '../../Wrapper/NoteWrapper';
+import NodeWrapper from '../../Wrapper/NodeWrapper';
 
 
 export default function ChakraProgress({ data }: any) {
@@ -34,9 +34,7 @@ function ProgressBasic() {
             <Progress size='xs' isIndeterminate />
             <NoteWrapper>
                 <UnorderedList>
-                    <ListItem>Determinate - value is known</ListItem>
                     <ListItem>animate - isIndeterminate</ListItem>
-                    <ListItem>Interesting settings - thickness, label </ListItem>
                     <ListItem>Common settings - color, size</ListItem>
                 </UnorderedList>
 
