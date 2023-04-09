@@ -1,10 +1,11 @@
 import {
-    Box, Text, Heading, ListItem, UnorderedList, Button
+    Box, Text, Heading, ListItem, UnorderedList, Button, Stack
 } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, useColorModeValue, useMultiStyleConfig, useTab } from '@chakra-ui/react'
 import { useState, forwardRef, } from 'react';
 import { Handle, Position } from 'reactflow';
 import NoteWrapper from '../../Wrapper/NoteWrapper';
+import NodeWrapper from '../../Wrapper/NodeWrapper';
 
 
 const tabData = [
@@ -28,31 +29,25 @@ interface DataTabsProps {
     data: TabData[];
 }
 
-export function ChakraDataTab() {
-    const DataTabs = ({ data }: DataTabsProps) => {
-        return (
-            <>
-
-                <Tabs>
-                    <TabList>
-                        {data.map((tab: any, index: any) => (
-                            <Tab key={index}>{tab.label}</Tab>
-                        ))}
-                    </TabList>
-                    <TabPanels>
-                        {data.map((tab: any, index: any) => (
-                            <TabPanel p={4} key={index}>
-                                {tab.content}
-                            </TabPanel>
-                        ))}
-                    </TabPanels>
-                </Tabs>
-                <Handle type="target" position={Position.Left} />
-                <Handle type="source" position={Position.Right} />
-            </>
-        )
-    }
-    return <DataTabs data={tabData} />
+function ChakraDataTab({ data }: DataTabsProps) {
+    return (
+        <>
+            <Tabs shadow='md' borderWidth='1px'>
+                <TabList>
+                    {data.map((tab: any, index: any) => (
+                        <Tab key={index}>{tab.label}</Tab>
+                    ))}
+                </TabList>
+                <TabPanels>
+                    {data.map((tab: any, index: any) => (
+                        <TabPanel p={4} key={index}>
+                            {tab.content}
+                        </TabPanel>
+                    ))}
+                </TabPanels>
+            </Tabs>
+        </>
+    )
 }
 
 
@@ -60,7 +55,7 @@ export function ChakraDataTab() {
 interface Props {
     children?: React.ReactNode;
 }
-export type Ref = HTMLElement;
+type Ref = HTMLElement;
 
 const CustomTab = forwardRef<Ref, Props>((props, ref) => {
     // 1. Reuse the `useTab` hook
@@ -82,10 +77,10 @@ const CustomTab = forwardRef<Ref, Props>((props, ref) => {
 CustomTab.displayName = 'CustomTab';
 
 
-export function ChakraCustomTab({ data }: any) {
+function ChakraCustomTab() {
     return (
         <>
-            <Tabs>
+            <Tabs shadow='md' borderWidth='1px'>
                 <TabList>
                     <CustomTab>One</CustomTab>
                     <CustomTab>Two</CustomTab>
@@ -95,47 +90,62 @@ export function ChakraCustomTab({ data }: any) {
                     <TabPanel>2</TabPanel>
                 </TabPanels>
             </Tabs>
-            <Handle type="target" position={Position.Left} />
-            <Handle type="source" position={Position.Right} />
         </>
     )
 }
 
-// 
-export function ChakraTab({ data }: any) {
+function ChakraBasicTab() {
 
     const colors = useColorModeValue(
-        ['red.50', 'teal.50', 'blue.50'],
+        ['red.100', 'teal.100', 'blue.100'],
         ['red.900', 'teal.900', 'blue.900'],
     )
     const [tabIndex, setTabIndex] = useState(0)
     const bg = colors[tabIndex]
 
+    {/* isFitted - stretch the tabs to fit width/height*/ }
+    {/* isLazy - lazy mounting*/ }
+    {/* default index = tab shows at start */ }
+
     return (
-        <>
-            {/* isFitted - stretch the tabs to fit width/height*/}
-            {/* isLazy - lazy mounting*/}
-            {/* default index = tab shows at start */}
+        <Tabs isFitted isLazy size='lg' defaultIndex={1} onChange={(index) => setTabIndex(index)} bg={bg} shadow='md' borderWidth='1px'>
+            <TabList>
+                <Tab>One</Tab>
+                <Tab>Two</Tab>
+                <Tab>Three</Tab>
+            </TabList>
 
-            <Tabs isFitted isLazy size='lg' defaultIndex={1} onChange={(index) => setTabIndex(index)} bg={bg}>
-                <TabList>
-                    <Tab>One</Tab>
-                    <Tab>Two</Tab>
-                    <Tab>Three</Tab>
-                </TabList>
+            <TabPanels>
+                <TabPanel>
+                    <p>Instead of expanding or collapsing content, tabs switch between different content sections.</p>
+                </TabPanel>
+                <TabPanel>
+                    <p>two!</p>
+                </TabPanel>
+                <TabPanel>
+                    <p>three!</p>
+                </TabPanel>
+            </TabPanels>
+        </Tabs>
+    )
+}
 
-                <TabPanels>
-                    <TabPanel>
-                        <p>one!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>two!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>three!</p>
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
+// 
+export default function ChakraTab({ data }: any) {
+
+
+
+    return (
+        <NodeWrapper heading='Tabs' description='A React component that helps you build accessible tabs, by providing keyboard interactions and ARIA attributes described in the WAI-ARIA Tab Panel Design Pattern.' setMaxW={true}>
+
+            <Stack spacing={8}>
+
+                <ChakraBasicTab />
+                <ChakraCustomTab />
+                <ChakraDataTab data={tabData}/>
+
+            </Stack>
+
 
             <NoteWrapper>
                 <UnorderedList>
@@ -149,6 +159,6 @@ export function ChakraTab({ data }: any) {
 
             <Handle type="target" position={Position.Left} />
             <Handle type="source" position={Position.Right} />
-        </>
+        </NodeWrapper>
     );
 }

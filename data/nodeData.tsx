@@ -1,7 +1,7 @@
 import TextUpdaterNode from '../components/React-Flow/customNode';
 import TextAnimationNode from '../components/Animation/TextAnimationNode';
 import ChakraAccordion from '../components/Chakra/Chakra_Disclosure/Chakra_Accordion';
-import { ChakraTab, ChakraCustomTab, ChakraDataTab } from '../components/Chakra/Chakra_Disclosure/Chakra_Tabs';
+import ChakraTab from '../components/Chakra/Chakra_Disclosure/Chakra_Tabs';
 import {
     Node,
     Edge,
@@ -11,6 +11,7 @@ import ChakraCircularProgress from '../components/Chakra/Chakra_Feedback/Chakra_
 import ChakraProgress from '../components/Chakra/Chakra_Feedback/Chakra_Progress';
 import ChakraSkeleton from '../components/Chakra/Chakra_Feedback/Chakra_Skeleton';
 import ChakraToast from '../components/Chakra/Chakra_Feedback/Chakra_Toast';
+import DragHandleNode from '../components/React-Flow/DragHandle';
 
 
 export const initialEdges = [
@@ -24,33 +25,42 @@ export const initialNodes: Node[] = [
     // { id: '1', type: 'textUpdater', position: { x: 0, y: 0 }, data: { value: 'blue.100' } },
     // { id: '2', type: 'textUpdater', position: { x: 500, y: 500 }, data: { value: 'green.100' } },
     { id: '3', type: 'TextAnimationNode', position: { x: 0, y: -1000 }, data: { value: 'green.100' } },
-    { id: '4', type: 'Input', position: { x:  -2400, y: 0 }, data: { label: 'Tab' } },
-    { id: '5', type: 'Input', position: { x:  -2400, y: 1000 }, data: { label: 'Accordion' } },
+    { id: '4', type: 'input', position: { x: -2400, y: 0 }, data: { label: 'Tab' } },
+    { id: '5', type: 'input', position: { x: -2400, y: 1000 }, data: { label: 'Accordion' } },
 
-    { id: '6', type: 'ChakraAccordion', position: { x: -1800, y: 0 }, data: { value: 'green.100' } },
-    { id: '7', type: 'ChakraTab', position: { x:  -1800, y: 600 }, data: { value: '' } },
-    { id: '8', type: 'ChakraCustomTab', position: { x: -1800, y: 1200 }, data: { value: '' } },
-    { id: '9', type: 'ChakraDataTab', position: { x:  -1800, y: 1800 }, data: { value: '' } },
+    {
+        id: 'Disclosure',
+        data: { label: 'Chakra Disclosure' },
+        position: { x: 320, y: 200 },
+        className: 'light',
+        style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 300, height: 300 },
+    },
+
+    { id: '6', type: 'ChakraAccordion', position: { x: -0, y: 0 }, data: { value: 'green.100' }, parentNode: 'Disclosure', expandParent:true },
+    { id: '7', type: 'ChakraTab', position: { x: 0, y: 600 }, data: { value: '' }, parentNode: 'Disclosure', expandParent:true},
 
     { id: '10', type: 'ChakraAlert', position: { x: 1800, y: 0 }, data: { value: '' } },
     { id: '11', type: 'ChakraCircularProgress', position: { x: 1800, y: 600 }, data: { value: '' } },
     { id: '12', type: 'ChakraProgress', position: { x: 1800, y: 1200 }, data: { value: '' } },
     { id: '13', type: 'ChakraSkeleton', position: { x: 1800, y: 1800 }, data: { value: '' } },
     { id: '14', type: 'ChakraToast', position: { x: 1800, y: 2400 }, data: { value: '' } },
+
+    // React flow
+    { id: '15', type: 'DragHandleNode', position: { x: -3000, y: 0 }, dragHandle: '.custom-drag-handle', data: { value: '' } },
 ];
 
 export const nodeTypes = {
     TextUpdaterNode,
     TextAnimationNode,
-    ChakraAccordion,
 
+    ChakraAccordion,
     ChakraTab,
-    ChakraCustomTab,
-    ChakraDataTab,
 
     ChakraAlert,
     ChakraCircularProgress,
     ChakraProgress,
     ChakraSkeleton,
     ChakraToast,
+
+    DragHandleNode,
 };
