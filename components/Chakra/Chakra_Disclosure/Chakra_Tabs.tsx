@@ -100,7 +100,8 @@ function ChakraBasicTab() {
         ['red.100', 'teal.100', 'blue.100'],
         ['red.900', 'teal.900', 'blue.900'],
     )
-    const [tabIndex, setTabIndex] = useState(0)
+    const defaultIndex = 1
+    const [tabIndex, setTabIndex] = useState(defaultIndex)
     const bg = colors[tabIndex]
 
     {/* isFitted - stretch the tabs to fit width/height*/ }
@@ -108,7 +109,7 @@ function ChakraBasicTab() {
     {/* default index = tab shows at start */ }
 
     return (
-        <Tabs isFitted isLazy size='lg' defaultIndex={1} onChange={(index) => setTabIndex(index)} bg={bg} shadow='md' borderWidth='1px'>
+        <Tabs isFitted isLazy size='lg' defaultIndex={defaultIndex} onChange={(index) => setTabIndex(index)} bg={bg} shadow='md' borderWidth='1px'>
             <TabList>
                 <Tab>One</Tab>
                 <Tab>Two</Tab>
@@ -117,10 +118,12 @@ function ChakraBasicTab() {
 
             <TabPanels>
                 <TabPanel>
-                    <p>Instead of expanding or collapsing content, tabs switch between different content sections.</p>
+                    <p>one!</p>
+
                 </TabPanel>
                 <TabPanel>
-                    <p>two!</p>
+                    <p>Instead of expanding or collapsing content, tabs switch between different content sections.</p>
+
                 </TabPanel>
                 <TabPanel>
                     <p>three!</p>
@@ -142,7 +145,7 @@ export default function ChakraTab({ data }: any) {
 
                 <ChakraBasicTab />
                 <ChakraCustomTab />
-                <ChakraDataTab data={tabData}/>
+                <ChakraDataTab data={tabData} />
 
             </Stack>
 
