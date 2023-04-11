@@ -12,8 +12,7 @@ export default function TextCutting({ data }: any) {
     return (
         <NodeWrapper heading='Text Cutting' description='Cutting text' setMaxW={true}>
 
-
-            <Box role="group" w='full'>
+            <Box role="group" w='fit-content'>
                 {/* Up : difference in transform, clipPath*/}
                 <Box position={'absolute'}>
 
@@ -39,7 +38,7 @@ export default function TextCutting({ data }: any) {
                 </Box>
 
                 {/* Cut Indicator: use After*/}
-                <Box position={'absolute'}
+                <Box position={'absolute'} whiteSpace={'nowrap'}
                     _after={{
                         content: '""', w: '0', h: '5px', bg: 'red.200', opacity: '0.8',
                         position: 'absolute', left: '0', top: '50%',
@@ -55,6 +54,7 @@ export default function TextCutting({ data }: any) {
                     ))}
                 </Box>
 
+                {/* For layout, need some actual text to have width */}
                 <Text opacity={0} display='inline-block' m='0vmin 0.3vmin'>{text}</Text>
             </Box>
 
@@ -69,7 +69,7 @@ export default function TextCutting({ data }: any) {
                     </ListItem>
 
                     <ListItem>
-                        The cut is using the after attribute in css, so the length matches 
+                        The cut is using the after attribute in css, so the length matches. Have some maths to calculate timing (delay, text length) 
                     </ListItem>
 
                     <ListItem>
