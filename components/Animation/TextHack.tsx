@@ -42,11 +42,9 @@ export default function TextHack() {
     return (
         <NodeWrapper heading='Text Hack' description='Hack looking text' setMaxW={true}>
 
-            <Box onMouseOver={onMouseOver} w='fit-content'>
-                <Text as='span' fontSize='6xl' fontWeight={'800'} >
-                    {currentText}
-                </Text>
-            </Box>
+            <Text fontFamily={'monospace'}  fontSize='6xl' fontWeight={'1000'} w='fit-content' onMouseOver={onMouseOver} p='3' rounded={'xl'} _hover={{ bg: 'black', textColor: 'white' }}>
+                {currentText}
+            </Text>
 
 
             <NoteWrapper>
@@ -70,6 +68,10 @@ export default function TextHack() {
 
                     <ListItem>
                         Code from Hyperlexed: https://codepen.io/hrshainik/pen/mdVBwwm?editors=0100
+                    </ListItem>
+
+                    <ListItem>
+                        Use monospace font family to have consistent size of each letter
                     </ListItem>
                 </UnorderedList>
             </NoteWrapper>
