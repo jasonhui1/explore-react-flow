@@ -14,6 +14,7 @@ import ChakraToast from '../components/Chakra/Chakra_Feedback/Chakra_Toast';
 import DragHandleNode from '../components/React-Flow/DragHandle';
 import TextCutting from '../components/Animation/TextCutting';
 import TextFadingIn from '../components/Animation/TextFadingIn';
+import TextHack from '../components/Animation/TextHack';
 
 
 export const initialEdges = [
@@ -60,7 +61,8 @@ export const initialNodes: Node[] = [
 
     //Animation
     { id: '100', type: 'TextCutting', position: { x: 800, y: 0 },  data: { value: '' } },
-    { id: '101', type: 'TextFadingIn', position: { x: 0, y: 0 },  data: { value: '' } },
+    { id: '101', type: 'TextFadingIn', position: { x: -1600, y: 0 },  data: { value: '' } },
+    { id: '102', type: 'TextHack', position: { x: 0, y: 0 },  data: { value: '' } },
 
 ];
 
@@ -69,6 +71,7 @@ export const nodeTypes = {
     TextAnimationNode,
     TextCutting,
     TextFadingIn,
+    TextHack,
 
     ChakraAccordion,
     ChakraTab,
