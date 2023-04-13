@@ -1,7 +1,6 @@
 import { Box, Button, Card, Divider, Flex, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import NodeWrapper from '../Wrapper/NodeWrapper';
 import NoteWrapper from '../Wrapper/NoteWrapper';
-import { transform } from 'typescript';
 
 
 export default function TextFadingIn({ data }: any) {

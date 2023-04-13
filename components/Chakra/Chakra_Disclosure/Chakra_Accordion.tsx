@@ -10,7 +10,6 @@ import { Handle, Position } from 'reactflow';
 import NodeWrapper from '../../Wrapper/NodeWrapper';
 import NoteWrapper from '../../Wrapper/NoteWrapper';
 
-const handleStyle = { left: 10 };
 
 function Note() {
     return (
@@ -69,10 +68,6 @@ export default function ChakraAccordion({ data }: any) {
             </Accordion>
 
             <Note/>
-
-
-            <Handle type="target" position={Position.Left} />
-            <Handle type="source" position={Position.Right} />
         </NodeWrapper>
     );
 }

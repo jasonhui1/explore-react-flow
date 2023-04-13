@@ -54,7 +54,7 @@ export default function Home() {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={nodeTypes}
-
+        // panOnDrag={false}
       >
         <Controls />
         <MiniMap />

@@ -136,8 +136,6 @@ function ChakraBasicTab() {
 // 
 export default function ChakraTab({ data }: any) {
 
-
-
     return (
         <NodeWrapper heading='Tabs' description='A React component that helps you build accessible tabs, by providing keyboard interactions and ARIA attributes described in the WAI-ARIA Tab Panel Design Pattern.' setMaxW={true}>
 
@@ -159,9 +157,6 @@ export default function ChakraTab({ data }: any) {
                 </UnorderedList>
             </NoteWrapper>
 
-
-            <Handle type="target" position={Position.Left} />
-            <Handle type="source" position={Position.Right} />
         </NodeWrapper>
     );
 }
