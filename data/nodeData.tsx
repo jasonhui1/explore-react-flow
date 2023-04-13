@@ -15,6 +15,7 @@ import DragHandleNode from '../components/React-Flow/DragHandle';
 import TextCutting from '../components/Animation/TextCutting';
 import TextFadingIn from '../components/Animation/TextFadingIn';
 import TextHack from '../components/Animation/TextHack';
+import ImageSlider from '../components/ImageSlider/ImageSlider';
 
 
 export const initialEdges = [
@@ -62,7 +63,12 @@ export const initialNodes: Node[] = [
     //Animation
     { id: '100', type: 'TextCutting', position: { x: 800, y: 0 },  data: { value: '' } },
     { id: '101', type: 'TextFadingIn', position: { x: -1600, y: 0 },  data: { value: '' } },
-    { id: '102', type: 'TextHack', position: { x: 0, y: 0 },  data: { value: '' } },
+    { id: '102', type: 'TextHack', position: { x: -2400, y: 0 },  data: { value: '' } },
+
+
+    { id: '200', type: 'ImageSlider', position: { x: 0, y: 0 },  data: { value: '' } , dragHandle: '.custom-drag-handle'},
+
+
 
 ];
 
@@ -82,5 +88,6 @@ export const nodeTypes = {
     ChakraSkeleton,
     ChakraToast,
 
+    ImageSlider,
     DragHandleNode,
 };
