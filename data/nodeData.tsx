@@ -16,6 +16,7 @@ import TextCutting from '../components/Animation/TextCutting';
 import TextFadingIn from '../components/Animation/TextFadingIn';
 import TextHack from '../components/Animation/TextHack';
 import ImageSlider from '../components/ImageSlider/ImageSlider';
+import SmoothListInsertion from '../components/Transition/SmoothListInsertion';
 
 
 export const initialEdges = [
@@ -40,8 +41,8 @@ export const initialNodes: Node[] = [
         style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 300, height: 300 },
     },
 
-    { id: '6', type: 'ChakraAccordion', position: { x: 0, y: 0 }, data: { value: 'green.100' }, parentNode: 'Disclosure', expandParent:true },
-    { id: '7', type: 'ChakraTab', position: { x: 0, y: 600 }, data: { value: '' }, parentNode: 'Disclosure', expandParent:true},
+    { id: '6', type: 'ChakraAccordion', position: { x: 0, y: 0 }, data: { value: 'green.100' }, parentNode: 'Disclosure', expandParent: true },
+    { id: '7', type: 'ChakraTab', position: { x: 0, y: 600 }, data: { value: '' }, parentNode: 'Disclosure', expandParent: true },
 
     {
         id: 'Feedback',
@@ -51,22 +52,32 @@ export const initialNodes: Node[] = [
         style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 300, height: 300 },
     },
 
-    { id: '10', type: 'ChakraAlert', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'Feedback', expandParent:true  },
-    { id: '11', type: 'ChakraCircularProgress', position: { x: 0, y: 600 }, data: { value: '' }, parentNode: 'Feedback', expandParent:true },
-    { id: '12', type: 'ChakraProgress', position: { x: 0, y: 1200 }, data: { value: '' }, parentNode: 'Feedback', expandParent:true },
-    { id: '13', type: 'ChakraSkeleton', position: { x: 0, y: 1800 }, data: { value: '' }, parentNode: 'Feedback', expandParent:true },
-    { id: '14', type: 'ChakraToast', position: { x: 0, y: 2400 }, data: { value: '' }, parentNode: 'Feedback', expandParent:true },
+    { id: '10', type: 'ChakraAlert', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'Feedback', expandParent: true },
+    { id: '11', type: 'ChakraCircularProgress', position: { x: 0, y: 600 }, data: { value: '' }, parentNode: 'Feedback', expandParent: true },
+    { id: '12', type: 'ChakraProgress', position: { x: 0, y: 1200 }, data: { value: '' }, parentNode: 'Feedback', expandParent: true },
+    { id: '13', type: 'ChakraSkeleton', position: { x: 0, y: 1800 }, data: { value: '' }, parentNode: 'Feedback', expandParent: true },
+    { id: '14', type: 'ChakraToast', position: { x: 0, y: 2400 }, data: { value: '' }, parentNode: 'Feedback', expandParent: true },
 
     // React flow
     { id: '15', type: 'DragHandleNode', position: { x: -3000, y: 0 }, dragHandle: '.custom-drag-handle', data: { value: '' } },
 
     //Animation
-    { id: '100', type: 'TextCutting', position: { x: 800, y: 0 },  data: { value: '' } },
-    { id: '101', type: 'TextFadingIn', position: { x: -1600, y: 0 },  data: { value: '' } },
-    { id: '102', type: 'TextHack', position: { x: -2400, y: 0 },  data: { value: '' } },
+    { id: '100', type: 'TextCutting', position: { x: 800, y: 0 }, data: { value: '' } },
+    { id: '101', type: 'TextFadingIn', position: { x: -1600, y: 0 }, data: { value: '' } },
+    { id: '102', type: 'TextHack', position: { x: -2400, y: 0 }, data: { value: '' } },
 
 
-    { id: '200', type: 'ImageSlider', position: { x: 0, y: 0 },  data: { value: '' } , dragHandle: '.custom-drag-handle'},
+    { id: '200', type: 'ImageSlider', position: { x: 0, y: -3000 }, data: { value: '' }, dragHandle: '.custom-drag-handle' },
+
+
+    {
+        id: 'FramerMotion',
+        data: { label: 'FramerMotion' },
+        position: { x: 0, y: 0 },
+        className: 'light',
+        style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 300, height: 300 },
+    },
+    { id: '300', type: 'SmoothListInsertion', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
 
 
 
@@ -90,4 +101,6 @@ export const nodeTypes = {
 
     ImageSlider,
     DragHandleNode,
+
+    SmoothListInsertion,
 };
