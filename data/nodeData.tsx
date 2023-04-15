@@ -17,6 +17,7 @@ import TextFadingIn from '../components/Animation/TextFadingIn';
 import TextHack from '../components/Animation/TextHack';
 import ImageSlider from '../components/ImageSlider/ImageSlider';
 import SmoothListInsertion from '../components/Transition/SmoothListInsertion';
+import StaggerTransition from '../components/Transition/StaggerTransition';
 
 
 export const initialEdges = [
@@ -62,7 +63,7 @@ export const initialNodes: Node[] = [
     { id: '15', type: 'DragHandleNode', position: { x: -3000, y: 0 }, dragHandle: '.custom-drag-handle', data: { value: '' } },
 
     //Animation
-    { id: '100', type: 'TextCutting', position: { x: 800, y: 0 }, data: { value: '' } },
+    { id: '100', type: 'TextCutting', position: { x: -3200, y: 0 }, data: { value: '' } },
     { id: '101', type: 'TextFadingIn', position: { x: -1600, y: 0 }, data: { value: '' } },
     { id: '102', type: 'TextHack', position: { x: -2400, y: 0 }, data: { value: '' } },
 
@@ -77,7 +78,8 @@ export const initialNodes: Node[] = [
         className: 'light',
         style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 300, height: 300 },
     },
-    { id: '300', type: 'SmoothListInsertion', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
+    { id: '300', type: 'SmoothListInsertion', position: { x: 1000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
+    { id: '301', type: 'StaggerTransition', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
 
 
 
@@ -103,4 +105,5 @@ export const nodeTypes = {
     DragHandleNode,
 
     SmoothListInsertion,
+    StaggerTransition
 };
