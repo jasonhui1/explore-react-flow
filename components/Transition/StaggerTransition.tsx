@@ -1,4 +1,4 @@
-import { Box, Button, Flex, List, ListItem, OrderedList, Stack, Text, UnorderedList } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, List, ListItem, OrderedList, Stack, Text, UnorderedList } from "@chakra-ui/react";
 import { motion, Variants } from "framer-motion";
 import NodeWrapper from "../Wrapper/NodeWrapper";
 import { useState } from "react";
@@ -22,7 +22,7 @@ export default function StaggerTransition() {
 
     return (
 
-        <NodeWrapper heading='Stagger Transition' description="Stagger animation">
+        <NodeWrapper heading='Stagger Transition' description="Use varients and stagger children">
             <Box as={motion.nav}
                 initial={false}
                 animate={isOpen ? "open" : "closed"} w='300px'
@@ -78,6 +78,7 @@ export default function StaggerTransition() {
             </Box>
 
             <NoteWrapper>
+                <Heading as='h4' fontSize={'xl'}>Animation Breakdown</Heading>
                 <OrderedList>
                     <ListItem>When the menu button is clicked, <b><i>scale down</i></b>, <b><i>flip arrow icon</i></b>  </ListItem>
                     <ListItem>Shows Menu container , from top center using <b><i>clip path inset</i></b> </ListItem>

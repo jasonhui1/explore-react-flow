@@ -15,13 +15,24 @@ interface NoteProp {
     heading: string
     description: string
     children: React.ReactNode
-    setMaxW?: boolean
+    setMaxW?: boolean|string
 }
 
 export default function NodeWrapper({ heading, description, children, setMaxW = false }: NoteProp) {
+    
+    let maxW;
+    if (setMaxW){
+        if(typeof setMaxW === "boolean"){
+            maxW='75ch'
+        } else {
+            maxW = setMaxW
+        }
+    }
+
+
     return (
         <>
-            <Box border='solid' p='5' m='5' bg='blue.50' maxW={setMaxW ? '75ch' : 'fit-content'}>
+            <Box border='solid' p='5' m='5' bg='blue.50' maxW={maxW}>
 
                 <Text as='span' className="custom-drag-handle" style={dragHandleStyle} />
 

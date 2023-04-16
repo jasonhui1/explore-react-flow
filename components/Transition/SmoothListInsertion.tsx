@@ -30,12 +30,12 @@ export default function SmoothListInsertion() {
             <Flex gap='5'>
                 <Stack>
                     <Text>CLick on item to remove</Text>
-                    <AnimatePresence>
+                    <AnimatePresence initial={false}>
 
                         {items.map((item) => (
                             <motion.div
                                 key={item.id}
-                                initial={{ opacity: 0, maxHeight: 0 }}
+                                // initial={{ opacity: 0, maxHeight: 0 }}
                                 animate={{ opacity: 1, maxHeight: '50px' }}
                                 exit={{ opacity: 0, maxHeight: 0 }}
                                 transition={{ duration: 0.2 }}
