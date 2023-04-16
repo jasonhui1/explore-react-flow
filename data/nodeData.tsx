@@ -18,6 +18,7 @@ import TextHack from '../components/Animation/TextHack';
 import ImageSlider from '../components/ImageSlider/ImageSlider';
 import SmoothListInsertion from '../components/Transition/SmoothListInsertion';
 import StaggerTransition from '../components/Transition/StaggerTransition';
+import LayoutTransition from '../components/Transition/LayoutTransition';
 
 
 export const initialEdges = [
@@ -79,7 +80,8 @@ export const initialNodes: Node[] = [
         style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 300, height: 300 },
     },
     { id: '300', type: 'SmoothListInsertion', position: { x: 1000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
-    { id: '301', type: 'StaggerTransition', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
+    { id: '301', type: 'StaggerTransition', position: { x: 2000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
+    { id: '302', type: 'LayoutTransition', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
 
 
 
@@ -105,5 +107,6 @@ export const nodeTypes = {
     DragHandleNode,
 
     SmoothListInsertion,
-    StaggerTransition
+    StaggerTransition,
+    LayoutTransition
 };
