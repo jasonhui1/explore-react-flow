@@ -19,6 +19,7 @@ import ImageSlider from '../components/ImageSlider/ImageSlider';
 import SmoothListInsertion from '../components/Transition/SmoothListInsertion';
 import StaggerTransition from '../components/Transition/StaggerTransition';
 import LayoutTransition from '../components/Transition/LayoutTransition';
+import ReorderList from '../components/Transition/ReorderList';
 
 
 export const initialEdges = [
@@ -81,7 +82,8 @@ export const initialNodes: Node[] = [
     },
     { id: '300', type: 'SmoothListInsertion', position: { x: 1000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
     { id: '301', type: 'StaggerTransition', position: { x: 2000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
-    { id: '302', type: 'LayoutTransition', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
+    { id: '302', type: 'LayoutTransition', position: { x: 3000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
+    { id: '303', type: 'ReorderList', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true, dragHandle: '.custom-drag-handle'  },
 
 
 
@@ -108,5 +110,6 @@ export const nodeTypes = {
 
     SmoothListInsertion,
     StaggerTransition,
-    LayoutTransition
+    LayoutTransition,
+    ReorderList,
 };
