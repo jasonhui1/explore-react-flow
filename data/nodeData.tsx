@@ -20,6 +20,7 @@ import SmoothListInsertion from '../components/Transition/SmoothListInsertion';
 import StaggerTransition from '../components/Transition/StaggerTransition';
 import LayoutTransition from '../components/Transition/LayoutTransition';
 import ReorderList from '../components/Transition/ReorderList';
+import LayoutIdExample from '../components/Transition/LayoutId';
 
 
 export const initialEdges = [
@@ -28,6 +29,33 @@ export const initialEdges = [
     // { id: 'eTab-1', source: '4', target: '8' },
     // { id: 'eTab-2', source: '4', target: '9' },
 ];
+
+
+export const nodeTypes = {
+    TextUpdaterNode,
+    TextAnimationNode,
+    TextCutting,
+    TextFadingIn,
+    TextHack,
+
+    ChakraAccordion,
+    ChakraTab,
+
+    ChakraAlert,
+    ChakraCircularProgress,
+    ChakraProgress,
+    ChakraSkeleton,
+    ChakraToast,
+
+    ImageSlider,
+    DragHandleNode,
+
+    SmoothListInsertion,
+    StaggerTransition,
+    LayoutTransition,
+    ReorderList,
+    LayoutIdExample
+};
 
 export const initialNodes: Node[] = [
     // { id: '1', type: 'textUpdater', position: { x: 0, y: 0 }, data: { value: 'blue.100' } },
@@ -83,33 +111,9 @@ export const initialNodes: Node[] = [
     { id: '300', type: 'SmoothListInsertion', position: { x: 1000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
     { id: '301', type: 'StaggerTransition', position: { x: 2000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
     { id: '302', type: 'LayoutTransition', position: { x: 3000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
-    { id: '303', type: 'ReorderList', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true, dragHandle: '.custom-drag-handle'  },
+    { id: '303', type: 'ReorderList', position: { x: 0, y: 1000 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true, dragHandle: '.custom-drag-handle'  },
+    { id: '304', type: 'LayoutIdExample', position: { x: 0, y: 0 }, data: { value: '' }, dragHandle: '.custom-drag-handle'  },
 
 
 
 ];
-
-export const nodeTypes = {
-    TextUpdaterNode,
-    TextAnimationNode,
-    TextCutting,
-    TextFadingIn,
-    TextHack,
-
-    ChakraAccordion,
-    ChakraTab,
-
-    ChakraAlert,
-    ChakraCircularProgress,
-    ChakraProgress,
-    ChakraSkeleton,
-    ChakraToast,
-
-    ImageSlider,
-    DragHandleNode,
-
-    SmoothListInsertion,
-    StaggerTransition,
-    LayoutTransition,
-    ReorderList,
-};
