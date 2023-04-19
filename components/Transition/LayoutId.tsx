@@ -20,13 +20,6 @@ export default function LayoutIdExample() {
             <NoteWrapper>
                 <UnorderedList>
                     <ListItem>
-                        Transition for the indicator of selected item smoothly, used when state changes
-                    </ListItem>
-                    <ListItem>
-                        Underline has a property call <b><i>layoutId</i></b>, set it to be the same for all three boxes
-                    </ListItem>
-
-                    <ListItem>
                         'When a new component is added that has a layoutId prop that matches an existing component, it will automatically animate out from the old component.'
                     </ListItem>
                     <ListItem>
@@ -77,6 +70,18 @@ function Example1() {
                     <Button flexGrow={1} onClick={() => setSelecetedIndex(index)} key={index} colorScheme={selecetedIndex === index ? "green" : "blue"}>{index} </Button>
                 ))}
             </Flex>
+
+            <NoteWrapper>
+                <UnorderedList>
+                    <ListItem>
+                        Transition for the indicator of selected item smoothly, used when state changes
+                    </ListItem>
+                    <ListItem>
+                        Underline has a property call <b><i>layoutId</i></b>, set it to be the same for all three boxes
+                    </ListItem>
+                </UnorderedList>
+            </NoteWrapper>
+
         </>
     )
 }
@@ -84,8 +89,6 @@ function Example1() {
 const startItem = [
     { id: '1', name: 'banana' },
     { id: '2', name: 'apple' },
-    { id: '3', name: 'orange' },
-    { id: '4', name: 'pear' },
     { id: '5', name: 'strawberry' },
 ];
 
@@ -97,36 +100,46 @@ function Example2() {
         setItems(items => {
             let updateItems = [...items]
             const temp = updateItems[0];
-            updateItems[0] = updateItems[3];
-            updateItems[3] = temp;
+            updateItems[0] = updateItems[2];
+            updateItems[2] = temp;
             return updateItems
         })
     }
 
     return (
-        <Flex gap='5'>
-            <Stack>
-                {items.map((item) => (
-                    <motion.div
-                        key={item.id}
-                        layoutId={item.id}
-                        initial={{ opacity: 0, maxHeight: 0 }}
-                        animate={{ opacity: 1, maxHeight: '50px' }}
-                        exit={{ opacity: 0, maxHeight: 0 }}
-                        transition={{ duration: 1 }}
-                    >
-                        <Box w='200px' bg='blue.200' key={item.id} p='4' rounded='3xl' >
-                            {item.name}
-                        </Box>
-                    </motion.div>
-                ))}
+        <>
+            <Flex gap='5'>
+                <Stack>
+                    {items.map((item) => (
+                        <motion.div
+                            key={item.id}
+                            layoutId={item.id}
+                            transition={{ duration: 1 }}
+                        >
+                            <Box w='200px' bg='blue.200' key={item.id} p='4' rounded='3xl' >
+                                {item.name}
+                            </Box>
+                        </motion.div>
+                    ))}
 
-            </Stack >
+                </Stack >
+                <Box>
+                    <Button onClick={() => onSwap()}>Swap item</Button>
+                </Box>
+            </Flex>
 
-            <Box>
-                <Button onClick={() => onSwap()}>Swap item</Button>
-            </Box>
-        </Flex>
+            <NoteWrapper>
+                <UnorderedList>
+                    <ListItem>
+                        Transition for swapping item smoothly, 
+                    </ListItem>
+                    <ListItem>
+                        Each box has <b><i>layoutId</i></b> the same as its id, onSwap swaps the 0 and 2 index 
+                    </ListItem>
+                </UnorderedList>
+            </NoteWrapper>
+        </>
+
     )
 }
 

@@ -21,6 +21,7 @@ import StaggerTransition from '../components/Transition/StaggerTransition';
 import LayoutTransition from '../components/Transition/LayoutTransition';
 import ReorderList from '../components/Transition/ReorderList';
 import LayoutIdExample from '../components/Transition/LayoutId';
+import HoverTrail from '../components/Hover/Trail';
 
 
 export const initialEdges = [
@@ -29,6 +30,16 @@ export const initialEdges = [
     // { id: 'eTab-1', source: '4', target: '8' },
     // { id: 'eTab-2', source: '4', target: '9' },
 ];
+
+const hoverEffect = {
+    HoverTrail
+}
+
+
+const hoverEffectNodes = [
+    { id: 'hoverTrail', type: 'HoverTrail', position: { x: 0, y: 0 }, data: { value: '' } },
+
+]
 
 
 export const nodeTypes = {
@@ -54,8 +65,12 @@ export const nodeTypes = {
     StaggerTransition,
     LayoutTransition,
     ReorderList,
-    LayoutIdExample
+    LayoutIdExample,
+
+    ...hoverEffect
+
 };
+
 
 export const initialNodes: Node[] = [
     // { id: '1', type: 'textUpdater', position: { x: 0, y: 0 }, data: { value: 'blue.100' } },
@@ -104,16 +119,16 @@ export const initialNodes: Node[] = [
     {
         id: 'FramerMotion',
         data: { label: 'FramerMotion' },
-        position: { x: 0, y: 0 },
+        position: { x: 2000, y: -5000 },
         className: 'light',
         style: { backgroundColor: 'rgba(255, 0, 0, 0.2)', width: 300, height: 300 },
     },
-    { id: '300', type: 'SmoothListInsertion', position: { x: 1000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
-    { id: '301', type: 'StaggerTransition', position: { x: 2000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
-    { id: '302', type: 'LayoutTransition', position: { x: 3000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true  },
-    { id: '303', type: 'ReorderList', position: { x: 0, y: 1000 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true, dragHandle: '.custom-drag-handle'  },
-    { id: '304', type: 'LayoutIdExample', position: { x: 0, y: 0 }, data: { value: '' }, dragHandle: '.custom-drag-handle'  },
+    { id: '300', type: 'SmoothListInsertion', position: { x: 0, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true },
+    { id: '301', type: 'StaggerTransition', position: { x: 1000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true },
+    { id: '302', type: 'LayoutTransition', position: { x: 2000, y: 0 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true },
+    { id: '303', type: 'ReorderList', position: { x: 0, y: 1000 }, data: { value: '' }, parentNode: 'FramerMotion', expandParent: true, dragHandle: '.custom-drag-handle' },
+    { id: '304', type: 'LayoutIdExample', position: { x: 0, y: 2000 }, data: { value: '' }, dragHandle: '.custom-drag-handle' },
 
-
+    ...hoverEffectNodes
 
 ];
