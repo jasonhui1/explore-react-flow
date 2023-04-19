@@ -9,7 +9,7 @@ export default function HoverTrail() {
     const [hide, setHide] = useState(false)
 
     return (
-        <NodeWrapper heading='trail' description='hover trail effect'>
+        <NodeWrapper heading='trail' description='hover trail effect' setMaxW='50ch'>
 
             <Button bg={'gray.500'} w='200px' h='100px' rounded={'3xl'} position={'relative'}
                 overflow={'hidden'} onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}
@@ -37,6 +37,9 @@ export default function HoverTrail() {
                     </ListItem>
                     <ListItem>
                         Another box, inherit everything with inset, to hide
+                    </ListItem>
+                    <ListItem>
+                        from: https://www.youtube.com/watch?v=72N-L_ylcho&list=LL&index=7&ab_channel=OnlineTutorials
                     </ListItem>
                 </UnorderedList>
             </NoteWrapper>

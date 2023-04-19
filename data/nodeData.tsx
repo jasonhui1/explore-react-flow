@@ -22,6 +22,7 @@ import LayoutTransition from '../components/Transition/LayoutTransition';
 import ReorderList from '../components/Transition/ReorderList';
 import LayoutIdExample from '../components/Transition/LayoutId';
 import HoverTrail from '../components/Hover/Trail';
+import HoverFocus from '../components/Hover/Focus';
 
 
 export const initialEdges = [
@@ -32,12 +33,14 @@ export const initialEdges = [
 ];
 
 const hoverEffect = {
-    HoverTrail
+    HoverTrail,
+    HoverFocus
 }
 
 
 const hoverEffectNodes = [
-    { id: 'hoverTrail', type: 'HoverTrail', position: { x: 0, y: 0 }, data: { value: '' } },
+    { id: 'hoverTrail', type: 'HoverTrail', position: { x: 500, y: 0 }, data: { value: '' } },
+    { id: 'focusLetter', type: 'HoverFocus', position: { x: 0, y: 0 }, data: { value: '' } },
 
 ]
 
