@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { motion, Variants, LayoutGroup } from 'framer-motion';
-import { Box, Button, Flex, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Button, Flex, ListItem, UnorderedList } from '@chakra-ui/react';
+import { LayoutGroup, Variants, motion } from 'framer-motion';
+import { useState } from 'react';
 import NodeWrapper from '../Wrapper/NodeWrapper';
 import NoteWrapper from '../Wrapper/NoteWrapper';
 

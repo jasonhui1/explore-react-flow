@@ -1,6 +1,6 @@
-import { Stack, Box, Button, Flex, UnorderedList, ListItem, Text } from "@chakra-ui/react";
+import { Stack, Box, Button, Flex, UnorderedList, ListItem } from "@chakra-ui/react";
 import { useState } from "react";
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import NodeWrapper from "../Wrapper/NodeWrapper";
 import NoteWrapper from "../Wrapper/NoteWrapper";
 
