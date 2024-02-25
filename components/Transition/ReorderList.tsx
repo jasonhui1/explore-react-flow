@@ -35,7 +35,7 @@ const List = ({ axis }: ListProps) => {
 
             <Flex as={Reorder.Group} gap='1' bg='orange.200' p='2'
                 axis={axis} direction={axis === 'x' ? "row" : 'column'}
-                onReorder={setItems}
+                onReorder={()=>setItems}
                 values={items}
             >
                 {items.map((item) => (
